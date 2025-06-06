@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* Optional: ensure your map has height */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: rgb(30, 76, 124);
+                
+            }
+            #map {
+                height: 100vh; /* Full viewport height */
+                width: 100%;
+                background-color: rgb(30, 76, 124);;
+            }
+            a {
+                color: rgb(30, 76, 124);
+                text-decoration: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        const imageWidth = 1900;
+        const imageHeight = 1064;
+
+        
+
+        const bounds = [[0, 0], [imageHeight, imageWidth]];
+
+        const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -1,
+            maxZoom: 0,
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0
+        });
+        const image = L.imageOverlay('map.png', bounds).addTo(map);
+        map.fitBounds(bounds);
+
+        const india = L.marker([600, 1300]).addTo(map).bindPopup("India");
+        const japan = L.marker([700, 1600]).addTo(map).bindPopup("Japan");
+        const iran = L.marker([650, 1210]).addTo(map).bindPopup("Iran");
+        const iraq = L.marker([670, 1120]).addTo(map).bindPopup("Iraq");
+        const indonesia = L.marker([450, 1550]).addTo(map).bindPopup("Indonesia");
+
+
+        india.on('click', function () {
+            localStorage.setItem("country", "India");
+            window.location.href = "country.html";
+        });
+        japan.on('click', function () {
+            localStorage.setItem("country", "Japan");
+            window.location.href = "country.html";
+        });
+        iran.on('click', function () {
+            localStorage.setItem("country", "Iran");
+            window.location.href = "country.html";
+        });
+        iraq.on('click', function () {
+            localStorage.setItem("country", "Iraq");
+            window.location.href = "country.html";
+        });
+        indonesia.on('click', function () {
+            localStorage.setItem("country", "Indonesia");
+            window.location.href = "country.html";
+        });
+    </script>
+</html>
