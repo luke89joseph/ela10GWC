@@ -49,6 +49,14 @@
         const iran = L.marker([650, 1210]).addTo(map).bindPopup("Iran");
         const iraq = L.marker([670, 1120]).addTo(map).bindPopup("Iraq");
         const indonesia = L.marker([450, 1550]).addTo(map).bindPopup("Indonesia");
+        const brazil = L.marker([400, 650]).addTo(map).bindPopup("Brazil");
+        const DR = L.marker([605, 485]).addTo(map).bindPopup("Dominican Republic");
+        const honduras = L.marker([590, 390]).addTo(map).bindPopup("Honduras");
+        const niger = L.marker([560, 930]).addTo(map).bindPopup("Niger");
+        const kenya = L.marker([490, 1100]).addTo(map).bindPopup("Kenya");
+        const ethiopia = L.marker([540, 1100]).addTo(map).bindPopup("Ethiopia");
+        const madagascar = L.marker([350, 1130]).addTo(map).bindPopup("Ethiopia");
+
 
 
         india.on('click', function () {
@@ -69,6 +77,34 @@
         });
         indonesia.on('click', function () {
             localStorage.setItem("country", "Indonesia");
+            window.location.href = "country.html";
+        });
+        brazil.on('click', function () {
+            localStorage.setItem("country", "Brazil");
+            window.location.href = "country.html";
+        });
+        DR.on('click', function () {
+            localStorage.setItem("country", "Dominican Republic");
+            window.location.href = "country.html";
+        });
+        niger.on('click', function () {
+            localStorage.setItem("country", "Niger");
+            window.location.href = "country.html";
+        });
+        kenya.on('click', function () {
+            localStorage.setItem("country", "Kenya");
+            window.location.href = "country.html";
+        });
+        ethiopia.on('click', function () {
+            localStorage.setItem("country", "Ethiopia");
+            window.location.href = "country.html";
+        });
+        madagascar.on('click', function () {
+            localStorage.setItem("country", "Madagascar");
+            window.location.href = "country.html";
+        });
+        honduras.on('click', function () {
+            localStorage.setItem("country", "Honduras");
             window.location.href = "country.html";
         });
     </script>
